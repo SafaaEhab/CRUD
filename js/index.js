@@ -162,9 +162,7 @@ function validInputs(elemnts, msg) {
 function searchc() {
   container = "";
   for (var i = 0; i < productS.length; i++) {
-    if (
-      productS[i].name.toLowerCase().includes(search.value.toLowerCase())
-    ) {
+    if (productS[i].name.toLowerCase().includes(search.value.toLowerCase())) {
       container += `
         <tr>
                   <td scope="col">${i + 1}</td>
@@ -207,7 +205,6 @@ if (localStorage.getItem("site") != null) {
   siteS = [];
 }
 
-
 function siteadd() {
   if (
     validation(siteName, "siteAlert") &&
@@ -239,6 +236,9 @@ function removedata() {
   basic_url.classList.remove("is-invalid");
 
   siteAlert.classList.add("d-none");
+
+  // document.getElementById("btnAdd").attributes[4].value = "";
+  // document.getElementById("updatesite").attributes[4].value = "";
 }
 
 function displaySite() {
@@ -300,7 +300,8 @@ function validation(e, msgIn) {
 
   var siteRegex = {
     siteName: /^[A-Z][a-z0-9]{2,8}$/,
-    basic_url: /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
+    basic_url:
+      /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
   };
 
   if (siteRegex[e.id].test(sittext) == true) {
